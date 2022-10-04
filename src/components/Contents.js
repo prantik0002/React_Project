@@ -1,9 +1,10 @@
 import { Component,React} from 'react';
-import {db} from './Firebase/database';
-let x=1;
+import {db} from './FirebaseConfig';
+import { ref,onValue} from 'firebase/database';
+import { Navbar } from './Navbar';
 export class Contents extends Component{
     state={
-        catagories:[],
+        catagories:[], 
         products:[]
     };
     componentDidMount(){
@@ -40,8 +41,8 @@ export class Contents extends Component{
                     </div>
                     <div className='col-9'>
                         <div className='row'>
-                            {this.state.products.map(products=>(<div className='col-4'><div key={product['title']} className="card" style={{width:'18rem'}}>
-                                <img src={product['imageUrl']} className="card-img-top"/>
+                            {this.state.products.map(product=>(<div className='col-4'><div key={product['title']} className="card" style={{width:'18rem'}}>
+                                <img src={product['imageUrl']}  className="card-img-top"/>
                                 <div className="card-body">
                                    <h5 className="card-title">{product['title']}</h5>
                                    <h5 className="card-title">{product['price']}</h5>
