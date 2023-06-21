@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.img-phone{
+  height: 250px;
+  margin: 0px auto;
+  transition: 0.7s ease-out;
+}

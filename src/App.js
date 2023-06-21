@@ -1,19 +1,28 @@
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import { Contents } from './components/Contents';
 import { Navbar } from './components/Navbar';
-import { Route, Switch } from 'react-router-dom';
+import { Contents } from './components/Contents';
+import { ShoppingCart} from './components/Shopping-Cart';
+import { Switch } from 'react-router-dom';
 
 
-export  function App() {
+
+
+
+export default function App() {
   return (
-   <div>
+   <div className='m-2'>
      <Navbar/>
-     <Contents/>
+     <Switch>
+       <Route path='/shopping-cart' component={ShoppingCart}/>
+       <Route path='/' component={Contents}/>
+     </Switch>
+     
      
      </div>
    
   );
 }
 
-export default App;
+
